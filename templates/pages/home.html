@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    {{template "head" .}}
+    <meta name="author" content=""/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <style>
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("/static/medias/background.jpg");
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="">
+    <header>
+        {{template "header" .}}
+    </header>
+    <main class="container d-flex flex-fill align-items-center">
+        <div class="text-center mb-4">
+            <h1 class="text-body-emphasis">Website</h1>
+            <hr>
+            <p class="fs-5 text-body-secondary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis aliquid, exercitationem 
+                similique natus provident fugit cum totam beatae culpa vel, facere, temporibus ea optio 
+                magni explicabo! Eos exercitationem placeat molestiae!
+            </p>
+            <div class="d-flex gap-3 justify-content-center">
+                <a class="fs-5" href="#">Link</a>
+                <a class="fs-5" href="#">Link</a>
+                <a class="fs-5" href="#">Link</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        {{template "footer" .}}
+    </footer>
+    <script>
+        $(() => {
+            // Page code
+        });
+    </script>
+</body>
+</html>
