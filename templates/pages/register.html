@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    {{template "head" .}}
+    <meta name="author" content="" />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <style></style>
+</head>
+
+<body class="">
+    <header>
+        {{template "header" .}}
+    </header>
+    <main>
+        <div class="d-flex justify-content-center p-4 my-5">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                <form>
+                    <h1 class="h3 mb-3">Register</h1>
+                    <div class="mb-3">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="John"
+                            minlength="8">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password">Password</label>
+                        <input type="password" class="password-input form-control" id="password" name="password"
+                            placeholder="Password" minlength="8">
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmpassword">Confirm Password</label>
+                        <input type="password" class="password-input form-control" id="confirmpassword"
+                            placeholder="Confirm Password" minlength="8">
+                    </div>
+                    <button id="submit-btn" class="btn btn-primary w-100 mb-3" type="submit" disabled>Register <i
+                            class="bi bi-person-add"></i></button>
+                    <a href="/login" class="btn btn-secondary w-100">Login <i class="bi bi-box-arrow-in-right"></i></a>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        {{template "footer" .}}
+    </footer>
+    <script>
+        $(() => {
+            $(".password-input").on("change keyup", onPasswordChange);
+        });
+
+        function onPasswordChange() {
+            const password = $("#password").val();
+            const confirmPassword = $("#confirmpassword").val();
+            const submitBtn = $("#submit-btn");
+            submitBtn.attr("disabled", "true");
+            if (password == "" || confirmPassword == "") {
+                return;
+            }
+            if (password != confirmPassword) {
+                return;
+            }
+            submitBtn.removeAttr("disabled");
+        }
+    </script>
+</body>
+
+</html>

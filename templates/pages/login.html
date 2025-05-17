@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    {{template "head" .}}
+    {{template "status" .}}
+    <meta name="author" content="" />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <style>
+        #email {
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+        #password {
+            border-top-right-radius: 0px;
+            border-top-left-radius: 0px;
+        }
+    </style>
+</head>
+
+<body class="">
+    <header>
+        {{template "header" .}}
+    </header>
+    <main>
+        <div class="d-flex justify-content-center p-4 my-5">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                <form>
+                    <h1 class="h3 mb-3">Login</h1>
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                        <label for="email">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                        <label for="password">Password</label>
+                    </div>
+                    <button class="btn btn-primary w-100 mb-3" type="submit">Login <i class="bi bi-box-arrow-in-right"></i></button>
+                    <a href="/register" class="btn btn-secondary w-100">Register <i class="bi bi-person-add"></i></a>
+                    <hr>
+                    <div class="text-center">
+                        <a href="#">Forgot My Password</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        {{template "footer" .}}
+    </footer>
+    <script>
+        $(() => {
+            // Page code
+        });
+    </script>
+</body>
+
+</html>
