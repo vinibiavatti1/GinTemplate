@@ -1,19 +1,19 @@
 package user
 
 import (
-	"app/database"
+	"app/modules/database"
 	"database/sql"
 	"fmt"
 )
 
-func Insert(user *User) (int64, error) {
+func Insert(entity *User) (int64, error) {
 	db := database.Connect()
 	defer db.Close()
 	query := `
 	INSERT INTO Users (Name, Email, PasswordHash, Role, Hash)
 	VALUES (?, ?, ?, ?)
 	`
-	result, err := db.Exec(query, user.Name, user.Email, user.PasswordHash, RoleDefault, user.Hash)
+	result, err := db.Exec(query, entity.Name, entity.Email, entity.PasswordHash, RoleDefault, entity.Hash)
 	if err != nil {
 		return 0, fmt.Errorf("user.Insert: %v", err)
 	}
@@ -24,7 +24,7 @@ func Insert(user *User) (int64, error) {
 	return id, nil
 }
 
-func Update(user *User) error {
+func Update(entity *User) error {
 	db := database.Connect()
 	defer db.Close()
 	query := `
@@ -39,7 +39,7 @@ func Update(user *User) error {
 		EmailVerified = ?
 	WHERE ID = ?
 	`
-	_, err := db.Exec(query, user.Name, user.Email, user.PasswordHash, user.Role, user.Active, user.Hash, user.EmailVerified, user.ID)
+	_, err := db.Exec(query, entity.Name, entity.Email, entity.PasswordHash, entity.Role, entity.Active, entity.Hash, entity.EmailVerified, entity.ID)
 	if err != nil {
 		return fmt.Errorf("user.Update: %v", err)
 	}

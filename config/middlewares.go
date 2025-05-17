@@ -2,7 +2,7 @@ package config
 
 import (
 	"app/modules/auth"
-	"app/session"
+	"app/modules/session"
 
 	"github.com/gin-gonic/gin"
 )

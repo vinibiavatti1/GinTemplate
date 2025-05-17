@@ -1,8 +1,8 @@
 package auth
 
 import (
+	"app/modules/session"
 	"app/modules/user"
-	"app/session"
 	"app/utils"
 	"fmt"
 

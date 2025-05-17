@@ -1,0 +1,11 @@
+{{define "message"}}
+{{if .Message}}
+<script>
+    $(() => {
+        const category = "{{.Message.Category}}";
+        const message = "{{.Message.Message}}";
+        toastr[category](message);
+    })
+</script>
+{{end}}
+{{end}}

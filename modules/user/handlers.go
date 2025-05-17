@@ -1,7 +1,7 @@
 package user
 
 import (
-	"app/template"
+	"app/modules/template"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
